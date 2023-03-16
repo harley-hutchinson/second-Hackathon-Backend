@@ -1,0 +1,6 @@
+[
+  { "id": "530db7f9-94f5-489b-a1ca-255ae5d92f23", "title": "title 1", "amount": "100", "category": "Shopping", "description": "This is the best description", "isincome": false },
+  { "id": "f2e7d850-9ef8-46f1-afab-f1f1e5b9ef63", "title": "title 2", "amount": "101", "category": "Shopping", "description": "This is the best description", "isincome": true },
+  { "id": "aec7d1d6-1feb-4bb7-a192-a33b3bb1c5cb", "title": "title 3", "amount": "102", "category": "Food", "description": "This is the best description", "isincome": true },
+  { "id": "00ec76fe-41af-4710-8ce7-b0151ebb166d", "title": "title 4", "amount": "103", "category": "Salary", "description": "This is the best description", "isincome": false }
+]

@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const { v4: uuid } = require("uuid");
-// const cors = require("cors");
+const cors = require("cors");
 
 require("dotenv").config();
 
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8600;
 
 const app = express();
 app.use(express.json());
-// app.use(cors({ origin: process.env.POST.FRONTEND_URL }));
+app.use(cors({ origin: process.env.FRONTEND_URL }));
 
 // 1
 app.get("/transactions", (req, res) => {
@@ -107,7 +107,9 @@ app.delete("/transactions/:transactionsID", (req, res) => {
 
     const transactions = JSON.parse(data);
 
-    const transactionIndex = transactions.findIndex((transaction) => transaction.id === transactionsID);
+    const transactionIndex = transactions.findIndex(
+      (transaction) => transaction.id === transactionsID
+    );
 
     if (transactionIndex === -1) {
       return res.status(404).json({

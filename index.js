@@ -27,6 +27,45 @@ app.get("/transactions", (req, res) => {
 });
 
 // 2
+app.get("/transactions/in", (req, res) => {
+  fs.readFile("./data/data.json", (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        error: true,
+        Message: "Could not read your transactions from database",
+      });
+    }
+
+    const transactions = JSON.parse(data);
+
+    const filteredTransactionsIn = transactions.filter((transaction) => {
+      return transaction.isIncome;
+    });
+
+    res.json(filteredTransactionsIn);
+  });
+});
+// 3
+app.get("/transactions/out", (req, res) => {
+  fs.readFile("./data/data.json", (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        error: true,
+        Message: "Could not read your transactions from database",
+      });
+    }
+
+    const transactions = JSON.parse(data);
+
+    const filteredTransactionsIn = transactions.filter((transaction) => {
+      return !transaction.isIncome;
+    });
+
+    res.json(filteredTransactionsIn);
+  });
+});
+
+// 4
 app.post("/transactions", (req, res) => {
   const { title, amount, category, description, isIncome } = req.body;
 
@@ -66,7 +105,7 @@ app.post("/transactions", (req, res) => {
   });
 });
 
-// 3
+// 5
 app.delete("/transactions/:transactionsID", (req, res) => {
   const transactionsID = req.params.transactionsID;
 

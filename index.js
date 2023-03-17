@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const { v4: uuid } = require("uuid");
-// const cors = require("cors");
+const cors = require("cors");
 
 require("dotenv").config();
 
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8600;
 
 const app = express();
 app.use(express.json());
-// app.use(cors({ origin: process.env.POST.FRONTEND_URL }));
+app.use(cors({ origin: process.env.POST.FRONTEND_URL }));
 
 // 1
 app.get("/transactions", (req, res) => {
@@ -28,7 +28,7 @@ app.get("/transactions", (req, res) => {
 
 // 2
 app.post("/transactions", (req, res) => {
-  const { title, amount, category, description, isincome } = req.body;
+  const { title, amount, category, description, isIncome } = req.body;
 
   const newTransactions = {
     id: uuid(),
@@ -36,7 +36,7 @@ app.post("/transactions", (req, res) => {
     amount: amount,
     category: category,
     description: description,
-    isincome: isincome,
+    isIncome: isIncome,
   };
 
   fs.readFile("./data/data.json", (err, data) => {
@@ -67,33 +67,6 @@ app.post("/transactions", (req, res) => {
 });
 
 // 3
-// app.delete("/transactions/:transactionsID", (req, res) => {
-//   const transactionsID = req.params.transactionsID;
-
-//   fs.readFile("./data/data.json", (err, data) => {
-//     if (err) {
-//       return res.status(500).json({
-//         error: true,
-//         Message: "Could not read transaction from database",
-//       });
-//     }
-
-//     const transaction = JSON.parse(data);
-
-//     const findTransaction = transaction.find((id) => id.id === transactionsID);
-
-//     fs.writeFile("./data/data.json", JSON.stringify(findTransaction), (err) => {
-//       if (err) {
-//         return res.status(500).json({
-//           error: true,
-//           Message: "Could not updata deleted transaction from database",
-//         });
-//       }
-//       res.status(204).end();
-//     });
-//   });
-// });
-
 app.delete("/transactions/:transactionsID", (req, res) => {
   const transactionsID = req.params.transactionsID;
 

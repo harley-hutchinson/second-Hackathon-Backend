@@ -1,5 +1,5 @@
 [
-  { "id": "530db7f9-94f5-489b-a1ca-255ae5d92f23", "title": "title 1", "amount": "5000", "category": "The War Room", "description": "This is the best description", "isIncome": false, "date": "12/12/2019" },
-  { "id": "f2e7d850-9ef8-46f1-afab-f1f1e5b9ef63", "title": "title 2", "amount": "69", "category": "OnlyFans", "description": "This is the best description", "isIncome": true, "date": "12/12/2019" },
-  { "id": "aec7d1d6-1feb-4bb7-a192-a33b3bb1c5cb", "title": "title 3", "amount": "420", "category": "Stocks", "description": "This is the best description", "isIncome": true, "date": "12/12/2019" }
+  { "id": "530db7f9-94f5-489b-a1ca-255ae5d92f23", "title": "The War Room", "amount": "5000", "category": "TOP G'War Room", "description": "This is the best description", "isIncome": false, "date": "12/12/2019" },
+  { "id": "f2e7d850-9ef8-46f1-afab-f1f1e5b9ef63", "title": "OnlyFans", "amount": "69", "category": "Feet pics", "description": "This is the best description", "isIncome": true, "date": "12/12/2019" },
+  { "id": "aec7d1d6-1feb-4bb7-a192-a33b3bb1c5cb", "title": "Stocks", "amount": "420", "category": "🧦", "description": "This is the best description", "isIncome": true, "date": "12/12/2019" }
 ]
